@@ -1,0 +1,529 @@
+<!DOCTYPE html><html class="h-full" lang="en"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>EquationFirst - Processing Ingestion</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-dim": "#dddad1",
+            "tertiary-fixed": "#d7e6db",
+            "on-tertiary-fixed-variant": "#3c4a42",
+            "primary-container": "#19231f",
+            "primary-fixed-dim": "#bec9c3",
+            "on-tertiary-container": "#7e8c83",
+            "on-primary-fixed-variant": "#3f4944",
+            "on-error-container": "#93000a",
+            "background": "#fdf9f0",
+            "outline-variant": "#c3c8c4",
+            "on-surface": "#1c1c16",
+            "secondary-fixed-dim": "#ffb4a5",
+            "error-container": "#ffdad6",
+            "surface-tint": "#56615c",
+            "on-background": "#1c1c16",
+            "tertiary-fixed-dim": "#bbcac0",
+            "on-primary-fixed": "#141e1a",
+            "on-tertiary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffdad3",
+            "surface-container-high": "#ece8df",
+            "on-secondary-fixed": "#3f0400",
+            "surface-variant": "#e6e2d9",
+            "primary": "#19231F",
+            "inverse-primary": "#bec9c3",
+            "surface-container-low": "#f7f3ea",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "secondary": "#B83D27",
+            "inverse-on-surface": "#f4f0e7",
+            "tertiary": "#030d07",
+            "surface-container": "#f1eee5",
+            "outline": "#737875",
+            "on-surface-variant": "#575c59",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#121e18",
+            "surface-bright": "#fdf9f0",
+            "tertiary-container": "#17241d",
+            "secondary-container": "#fd6f54",
+            "primary-fixed": "#dae5df",
+            "inverse-surface": "#31302b",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#808b85",
+            "surface-container-highest": "#e6e2d9",
+            "surface": "#fdf9f0",
+            "on-secondary-container": "#6a0b00",
+            "on-secondary-fixed-variant": "#8a1c09"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "display-md": ["Space Grotesk", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["JetBrains Mono", "monospace"],
+            "label-sm": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #fdf9f0;
+      }
+      ::selection {
+        background: #B83D27;
+        color: #ffffff;
+      }
+    }
+
+    /* Wave and Cup Animations directly echoing the reference gif */
+    @keyframes waveSlow {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-40px); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes waveFast {
+      0% { transform: translateX(-45px); }
+      50% { transform: translateX(5px); }
+      100% { transform: translateX(-45px); }
+    }
+    @keyframes bubbleRise {
+      0% {
+        transform: translate(0, 0) scale(0.6);
+        opacity: 0;
+      }
+      25% {
+        opacity: 0.9;
+        transform: translate(2px, -8px) scale(1);
+      }
+      70% {
+        opacity: 0.8;
+        transform: translate(-3px, -24px) scale(0.95);
+      }
+      100% {
+        transform: translate(4px, -36px) scale(0.4);
+        opacity: 0;
+      }
+    }
+    @keyframes steamDrift {
+      0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.55;
+      }
+      100% {
+        transform: translateY(-28px) scale(1.2);
+        opacity: 0;
+      }
+    }
+    @keyframes pulseCoreDot {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      50% {
+        transform: scale(1.45);
+        opacity: 1;
+      }
+    }
+
+    .animate-wave-slow {
+      animation: waveSlow 4s ease-in-out infinite;
+    }
+    .animate-wave-fast {
+      animation: waveFast 3s ease-in-out infinite;
+    }
+    .bubble-1 {
+      animation: bubbleRise 3.2s ease-out infinite;
+      animation-delay: 0.2s;
+    }
+    .bubble-2 {
+      animation: bubbleRise 2.8s ease-out infinite;
+      animation-delay: 1.1s;
+    }
+    .bubble-3 {
+      animation: bubbleRise 3.6s ease-out infinite;
+      animation-delay: 1.9s;
+    }
+    .bubble-4 {
+      animation: bubbleRise 2.5s ease-out infinite;
+      animation-delay: 0.7s;
+    }
+    .steam-wisp-1 {
+      animation: steamDrift 3s ease-out infinite;
+      animation-delay: 0.3s;
+    }
+    .steam-wisp-2 {
+      animation: steamDrift 3.4s ease-out infinite;
+      animation-delay: 1.5s;
+    }
+    .core-dot {
+      animation: pulseCoreDot 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
+<!-- Minimal Header -->
+<header class="w-full border-b border-outline-variant/50 bg-surface/90 backdrop-blur-sm sticky top-0 z-30"><div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+  <!-- Logo -->
+  <a class="flex items-center gap-2.5 select-none group" href="#">
+    <div class="w-8 h-8 rounded-lg bg-[#ffdad3] border-2 border-primary flex items-center justify-center transition-transform duration-200 group-hover:-rotate-6 shadow-[2px_2px_0px_#19231f]">
+      <span class="font-bold text-primary text-base font-label-md">∑</span>
+    </div>
+    <div class="flex items-baseline tracking-tight font-headline-md leading-none">
+      <span class="font-bold text-lg text-primary">Equation</span>
+      <span class="font-extrabold text-lg text-[#ff5733] ml-0.5">First</span>
+    </div>
+  </a>
+  <!-- Editorial Navigation Links -->
+  <nav class="hidden md:flex items-center gap-6 font-label-sm text-xs font-semibold text-on-surface-variant">
+    
+    
+    
+    
+  </nav>
+  <!-- Actions -->
+  <div class="flex items-center gap-3">
+    
+    <button class="px-3.5 py-1.5 rounded-full border-2 border-primary bg-surface hover:bg-[#ffdad3] text-xs font-label-md font-bold transition-all shadow-[2px_2px_0px_#19231f]" type="button">
+      New Batch
+    </button>
+  </div>
+</div></header>
+<!-- Main Centered Presentation Card (Directly synthesizing Image 4 & Image 5) -->
+<main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 md:py-16 flex flex-col justify-center" style="background-image: linear-gradient(to right, rgba(215, 208, 194, 0.35) 1px, transparent 1px), linear-gradient(rgba(215, 208, 194, 0.35) 1px, transparent 1px); background-size: 72px 72px; background-position: center center;">
+<!-- Unified Minimalist Workspace Card -->
+<div class="relative flex items-center justify-between mb-4 px-2">
+  <!-- Playful radiating corner tick lines -->
+  <div class="absolute -top-3 -left-2 pointer-events-none select-none z-10">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#19231F" stroke-width="2" stroke-linecap="round">
+      <line x1="8" y1="18" x2="2" y2="16"></line>
+      <line x1="12" y1="11" x2="7" y2="5"></line>
+      <line x1="18" y1="8" x2="17" y2="2"></line>
+    </svg>
+  </div>
+  <!-- Continuity Tilted Badge matching Screen 1 -->
+  <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#ffdad3] border-2 border-primary rounded-full text-xs font-label-md font-bold text-primary shadow-[2px_2px_0px_#19231f] -rotate-1 ml-4 sm:ml-0">
+     Ingestion Pipeline Active
+  </div>
+  <span class="font-label-sm text-xs text-on-surface-variant font-medium hidden sm:inline-block">
+    Session ID: #EQ-9042A
+  </span>
+</div><div class="bg-surface-container-lowest rounded-2xl border-2 border-primary shadow-[6px_6px_0px_#19231f] overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/60">
+<!-- LEFT PANE: Distillation Animation Module (Directly inspired by Image 5 gif) -->
+<div class="lg:col-span-5 p-8 sm:p-12 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-surface to-surface-container-lowest/40">
+<!-- Subtle Top Indicator -->
+<div class="w-full flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium">
+              Distillation Engine
+            </span>
+<span class="font-label-sm text-label-sm text-secondary font-bold" id="live-percentage">99%</span>
+</div>
+<!-- Animated Teacup / Beaker Graphic -->
+<div class="relative w-52 h-52 flex items-center justify-center my-2 select-none">
+<!-- Drifting Mathematical Equation Bubbles & Steam -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Steam wisps -->
+<svg class="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-12 overflow-visible" fill="none" stroke="#B83D27" stroke-linecap="round" stroke-width="2">
+<path class="steam-wisp-1" d="M -6 18 Q -2 6 4 12 T 12 0" opacity="0.4"></path>
+<path class="steam-wisp-2" d="M 6 22 Q 12 10 18 16 T 24 2" opacity="0.45"></path>
+</svg>
+<!-- Rising Math Symbols as steam bubbles -->
+<span class="bubble-1 absolute font-label-md text-xs font-bold text-secondary" style="top: 26%; left: 34%;">∫</span>
+<span class="bubble-2 absolute font-label-md text-xs font-bold text-secondary" style="top: 22%; left: 54%;">∑</span>
+<span class="bubble-3 absolute font-label-md text-xs font-bold text-secondary" style="top: 28%; left: 45%;">λ</span>
+<span class="bubble-4 absolute font-label-md text-[10px] font-bold text-secondary" style="top: 24%; left: 63%;">x²</span>
+</div>
+<!-- SVG Cup & Liquid Waves -->
+<svg class="w-48 h-48 overflow-visible" fill="none" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Rounded inner clipping mask for the cup cavity -->
+<clipPath id="cup-liquid-clip">
+<path d="M 52 56 
+                           H 148 
+                           V 118 
+                           C 148 136 134 148 116 148 
+                           H 84 
+                           C 66 148 52 136 52 118 
+                           Z"></path>
+</clipPath>
+<!-- Liquid Amber Gradient -->
+<linearGradient id="warmTeaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#fd8a67"></stop>
+<stop offset="45%" stop-color="#B83D27"></stop>
+<stop offset="100%" stop-color="#7a1c09"></stop>
+</linearGradient>
+<linearGradient id="softWaveGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb094" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#e25338" stop-opacity="0.8"></stop>
+</linearGradient>
+</defs>
+<!-- Cup Liquid Interior -->
+<g clip-path="url(#cup-liquid-clip)">
+<!-- Ambient Liquid Backing -->
+<rect fill="url(#warmTeaGrad)" height="70" width="120" x="40" y="86"></rect>
+<!-- Secondary Wave (Slow, Background) -->
+<path class="animate-wave-slow" d="
+                  M 20 90 
+                  Q 45 80, 75 90 
+                  T 135 90 
+                  T 195 90 
+                  T 255 90 
+                  V 160 H 20 Z
+                " fill="url(#softWaveGrad)"></path>
+<!-- Primary Wave (Foreground sloshing) -->
+<path class="animate-wave-fast" d="
+                  M 10 93 
+                  Q 40 102, 70 93 
+                  T 130 93 
+                  T 190 93 
+                  T 250 93 
+                  V 160 H 10 Z
+                " fill="url(#warmTeaGrad)" opacity="0.95"></path>
+<!-- Bubbling luminous dot like in reference Image 5 -->
+<circle class="core-dot" cx="100" cy="132" fill="#fdf9f0" r="3.5"></circle>
+<circle cx="120" cy="120" fill="#ffd4c8" opacity="0.85" r="2"></circle>
+<circle cx="78" cy="126" fill="#ffd4c8" opacity="0.75" r="1.8"></circle>
+</g>
+<!-- Cup Handle -->
+<path d="M 148 76 C 168 76 172 88 172 99 C 172 110 166 122 148 122" stroke="#19231F" stroke-linecap="round" stroke-width="5.5"></path>
+<!-- Cup Main Outline -->
+<path d="M 50 54 
+                       H 150 
+                       V 118 
+                       C 150 137.5 134.5 150 116 150 
+                       H 84 
+                       C 65.5 150 50 137.5 50 118 
+                       Z" stroke="#19231F" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path>
+<!-- Saucer / Resting Surface Bar (Faithful to Reference 5) -->
+<line stroke="#19231F" stroke-linecap="round" stroke-width="5.5" x1="42" x2="158" y1="152" y2="152"></line>
+<line stroke="#19231F" stroke-linecap="round" stroke-width="5.5" x1="168" x2="176" y1="152" y2="152"></line>
+</svg>
+</div>
+<!-- Kinetic Typography: "loding ..." exactly matching Reference 5 -->
+<div class="mt-2 flex items-baseline justify-center gap-1">
+<span class="font-headline-md text-2xl font-semibold text-primary tracking-tight">
+              distilling equations
+            </span>
+<span class="inline-flex gap-1 pl-1 items-baseline">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 0s"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 0.18s"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-bounce" style="animation-delay: 0.36s"></span>
+</span>
+</div>
+<p class="font-body-sm text-sm text-on-surface-variant mt-2 max-w-xs">
+            Converting rasterized figures into standardized, screen-readable TeX structures.
+          </p>
+<!-- Smooth Progress Bar -->
+<div class="w-full max-w-xs mt-6">
+<div class="w-full h-2 rounded-full bg-surface-container border border-outline-variant overflow-hidden p-0.5">
+<div class="h-full bg-secondary rounded-full transition-all duration-700 ease-out" id="progress-fill" style="width: 99%;"></div>
+</div>
+<div class="flex justify-between items-center mt-2 font-label-sm text-xs text-on-surface-variant">
+<span>Page 14 of 22</span>
+<span>2 of 4 Files Ready</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: Clean Upload Queue List (Directly inspired by Image 4) -->
+<div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between">
+<div>
+<!-- Header for Queue -->
+<div class="flex items-center justify-between pb-5 border-b border-outline-variant/60">
+<div>
+<h2 class="font-headline-sm text-lg font-bold text-primary">
+                  Uploaded Documents
+                </h2>
+<p class="font-body-sm text-xs text-on-surface-variant">
+                  4 files in active processing queue
+                </p>
+</div>
+<!-- Quick Append action -->
+<button class="inline-flex items-center gap-1.5 text-xs font-label-md font-bold text-primary bg-surface hover:bg-[#ffdad3] px-3.5 py-1.5 rounded-lg border-2 border-primary transition-all shadow-[2px_2px_0px_#19231f]" type="button">
+  <span class="material-symbols-outlined text-[16px]">add</span>
+  Add file
+</button>
+</div>
+<!-- List rows matching the clear, spacious styling from Reference Image 4 -->
+<div class="divide-y divide-outline-variant/40">
+<!-- Item 1: Complete -->
+<div class="py-4 flex items-center justify-between gap-4 group">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Circular file badge -->
+<div class="w-10 h-10 rounded-full border border-outline-variant bg-surface-container flex items-center justify-center font-label-sm text-xs font-bold text-primary shrink-0 group-hover:border-primary transition-colors">
+                    PDF
+                  </div>
+<div class="min-w-0">
+<p class="font-body-md text-sm font-medium text-primary truncate">
+                      Biodata_Calculus_Syllabus.pdf
+                    </p>
+<p class="font-label-sm text-xs text-on-surface-variant mt-0.5">
+                      1.2 MB / 1.2 MB
+                    </p>
+</div>
+</div>
+<!-- Status indicator: Clean checkmark -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="w-7 h-7 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center" title="Processing Completed">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Item 2: Complete -->
+<div class="py-4 flex items-center justify-between gap-4 group">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-full border border-outline-variant bg-surface-container flex items-center justify-center font-label-sm text-xs font-bold text-primary shrink-0 group-hover:border-primary transition-colors">
+                    XLS
+                  </div>
+<div class="min-w-0">
+<p class="font-body-md text-sm font-medium text-primary truncate">
+                      User_exam_reports.xls
+                    </p>
+<p class="font-label-sm text-xs text-on-surface-variant mt-0.5">
+                      1.35 MB / 1.35 MB
+                    </p>
+</div>
+</div>
+<!-- Status indicator: Clean checkmark -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="w-7 h-7 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center" title="Processing Completed">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Active Processing -->
+<div class="py-4 flex items-center justify-between gap-4 group bg-surface-container-low/70 -mx-3 px-3 rounded-xl border border-secondary/20">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-full border border-secondary bg-secondary/10 flex items-center justify-center font-label-sm text-xs font-bold text-secondary shrink-0">
+                    PDF
+                  </div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-body-md text-sm font-semibold text-primary truncate">
+                        Thermodynamics_Lecture_09.pdf
+                      </p>
+<span class="text-[10px] font-label-md px-1.5 py-0.5 rounded bg-secondary text-on-secondary font-bold">
+                        ACTIVE
+                      </span>
+</div>
+<p class="font-label-sm text-xs text-secondary mt-0.5 font-medium">
+                      2.2 MB / 3.2 MB • Extracting equations
+                    </p>
+</div>
+</div>
+<!-- Status indicator: Animated spinner or cancel -->
+<div class="flex items-center gap-2 shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px] animate-spin">
+                    progress_activity
+                  </span>
+<button class="w-7 h-7 rounded-full text-on-surface-variant hover:text-secondary hover:bg-surface-container flex items-center justify-center transition-colors" title="Cancel this file" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Item 4: Queued / Standby -->
+<div class="py-4 flex items-center justify-between gap-4 group">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-full border border-outline-variant bg-surface-container flex items-center justify-center font-label-sm text-xs font-bold text-on-surface-variant shrink-0">
+                    DOC
+                  </div>
+<div class="min-w-0">
+<p class="font-body-md text-sm font-normal text-on-surface truncate">
+                      Quantum_Mechanics_Notes.doc
+                    </p>
+<p class="font-label-sm text-xs text-on-surface-variant mt-0.5">
+                      1.10 MB • Waiting in queue
+                    </p>
+</div>
+</div>
+<!-- Cancel / remove action (styled like the faint 'x' in Reference 4) -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="w-7 h-7 rounded-full text-outline hover:text-secondary hover:bg-surface-container flex items-center justify-center transition-colors" title="Remove file" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Footer Bar -->
+<div class="pt-6 mt-6 border-t border-outline-variant/50 flex flex-wrap items-center justify-between gap-4">
+<span class="font-label-sm text-xs text-on-surface-variant">
+              Auto-indexing formulas into accessible MathML &amp; TeX
+            </span>
+<div class="flex items-center gap-2"><button class="px-4 py-2 text-xs font-label-md font-bold text-primary bg-surface hover:bg-surface-container border-2 border-primary rounded-lg transition-all shadow-[2px_2px_0px_#19231f]" id="pause-btn" type="button">
+  Pause
+</button>
+<button class="px-5 py-2 text-xs font-label-md font-bold bg-[#ffdad3] hover:bg-[#ffb4a5] text-primary border-2 border-primary rounded-lg transition-all shadow-[3px_3px_0px_#19231f] flex items-center gap-1.5" id="view-results-btn" type="button">
+  <span>Review Complete</span>
+  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Minimal Back Link / Context Footnote -->
+<div class="mt-6 text-center"><a class="font-label-sm text-xs font-semibold text-primary hover:text-secondary inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-primary bg-surface hover:bg-surface-container-high transition-all shadow-[2px_2px_0px_#19231f]" href="#">
+  <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+  Return to document dropzone
+</a></div>
+</main>
+<script>
+    (function() {
+      // Interactive toggle for Pause / Resume
+      const pauseBtn = document.getElementById('pause-btn');
+      let isPaused = false;
+      if (pauseBtn) {
+        pauseBtn.addEventListener('click', function() {
+          isPaused = !isPaused;
+          if (isPaused) {
+            pauseBtn.textContent = 'Resume';
+            pauseBtn.classList.add('border-secondary', 'text-secondary');
+          } else {
+            pauseBtn.textContent = 'Pause';
+            pauseBtn.classList.remove('border-secondary', 'text-secondary');
+          }
+        });
+      }
+
+      // Smooth percentage pulse simulation
+      const pctElement = document.getElementById('live-percentage');
+      const progressFill = document.getElementById('progress-fill');
+      let pct = 68;
+      setInterval(() => {
+        if (!isPaused && pct < 99) {
+          pct += 1;
+          if (pctElement) pctElement.textContent = pct + '%';
+          if (progressFill) progressFill.style.width = pct + '%';
+        }
+      }, 1800);
+    })();
+  </script>
+
+
+</body></html>

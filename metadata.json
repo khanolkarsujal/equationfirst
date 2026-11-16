@@ -1,0 +1,8 @@
+{
+  "name": "EquationFirst",
+  "description": "Find the equations to fix first. A community-college accessibility coordinator tool for STEM course PDFs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

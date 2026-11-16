@@ -1,0 +1,367 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-secondary selection:text-on-secondary"><svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary":"#ab341f","vermilion":"#B83D27","on-background":"#1c1c16","outline-variant":"#c3c8c4","surface-container-highest":"#e6e2d9","secondary-container":"#fd6f54","tertiary-fixed-dim":"#bbcac0","on-tertiary":"#ffffff","on-tertiary-fixed":"#121e18","on-tertiary-fixed-variant":"#3c4a42","on-primary-fixed":"#141e1a","on-surface-variant":"#434845","on-error-container":"#93000a","on-primary-container":"#808b85","secondary-fixed":"#ffdad3","surface-bright":"#fdf9f0","background":"#fdf9f0","inverse-on-surface":"#f4f0e7","surface-container-low":"#f7f3ea","primary-fixed":"#dae5df","on-primary":"#ffffff","surface-container":"#f1eee5","on-secondary-container":"#6a0b00","inverse-surface":"#31302b","outline":"#737875","on-secondary-fixed-variant":"#8a1c09","on-secondary":"#ffffff","surface":"#fdf9f0","tertiary-container":"#17241d","on-primary-fixed-variant":"#3f4944","surface-container-high":"#ece8df","error":"#ba1a1a","surface-container-lowest":"#ffffff","on-surface":"#1c1c16","surface-variant":"#e6e2d9","surface-tint":"#56615c","primary":"#040c08","on-secondary-fixed":"#3f0400","tertiary":"#030d07","surface-dim":"#dddad1","on-tertiary-container":"#7e8c83","error-container":"#ffdad6","on-error":"#ffffff","inverse-primary":"#bec9c3","primary-container":"#19231f","tertiary-fixed":"#d7e6db","secondary-fixed-dim":"#ffb4a5","primary-fixed-dim":"#bec9c3"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","margin-desktop":"3rem","space-xl":"2.5rem","space-md":"1rem","margin":"2rem","gutter-sm":"1rem","gutter-lg":"2rem","margin-mobile":"1rem","space-sm":"0.5rem","gutter":"1.5rem","space-xs":"0.25rem"},fontFamily:{"label-sm":["JetBrains Mono","monospace"],"display-md-mobile":["Space Grotesk","sans-serif"],"headline-md":["Space Grotesk","sans-serif"],"body-md":["Inter","sans-serif"],"display-lg":["Space Grotesk","sans-serif"],"display-md":["Space Grotesk","sans-serif"],"label-md":["JetBrains Mono","monospace"],"body-lg":["Inter","sans-serif"],"headline-lg":["Space Grotesk","sans-serif"],"index-marker":["JetBrains Mono","monospace"],"headline-sm":["Space Grotesk","sans-serif"],"display-lg-mobile":["Space Grotesk","sans-serif"],"body-sm":["Inter","sans-serif"]},fontSize:{"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"500"}],"display-md-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["68px",{"lineHeight":"72px","letterSpacing":"-0.04em","fontWeight":"700"}],"display-md":["48px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"body-lg":["17px",{"lineHeight":"27px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"index-marker":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["40px",{"lineHeight":"44px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}]}}}};</script><style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #fdf9f0;
+      }
+      ::selection {
+        background: #B83D27;
+        color: #ffffff;
+      }
+    }
+    .kinetic-title-word {
+      display: inline-block;
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), letter-spacing 0.38s ease;
+    }
+    .kinetic-title:hover .kinetic-title-word {
+      transform: translateY(-2px);
+    }
+    .grid-cross {
+      transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sample-pill-dragging {
+      opacity: 0.85;
+      cursor: grabbing !important;
+      transform: scale(1.04);
+      box-shadow: 0 16px 36px -8px rgba(184, 61, 39, 0.35);
+      z-index: 100;
+    }
+  </style><svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary":"#ab341f","vermilion":"#B83D27","on-background":"#1c1c16","outline-variant":"#c3c8c4","surface-container-highest":"#e6e2d9","secondary-container":"#fd6f54","tertiary-fixed-dim":"#bbcac0","on-tertiary":"#ffffff","on-tertiary-fixed":"#121e18","on-tertiary-fixed-variant":"#3c4a42","on-primary-fixed":"#141e1a","on-surface-variant":"#434845","on-error-container":"#93000a","on-primary-container":"#808b85","secondary-fixed":"#ffdad3","surface-bright":"#fdf9f0","background":"#fdf9f0","inverse-on-surface":"#f4f0e7","surface-container-low":"#f7f3ea","primary-fixed":"#dae5df","on-primary":"#ffffff","surface-container":"#f1eee5","on-secondary-container":"#6a0b00","inverse-surface":"#31302b","outline":"#737875","on-secondary-fixed-variant":"#8a1c09","on-secondary":"#ffffff","surface":"#fdf9f0","tertiary-container":"#17241d","on-primary-fixed-variant":"#3f4944","surface-container-high":"#ece8df","error":"#ba1a1a","surface-container-lowest":"#ffffff","on-surface":"#1c1c16","surface-variant":"#e6e2d9","surface-tint":"#56615c","primary":"#040c08","on-secondary-fixed":"#3f0400","tertiary":"#030d07","surface-dim":"#dddad1","on-tertiary-container":"#7e8c83","error-container":"#ffdad6","on-error":"#ffffff","inverse-primary":"#bec9c3","primary-container":"#19231f","tertiary-fixed":"#d7e6db","secondary-fixed-dim":"#ffb4a5","primary-fixed-dim":"#bec9c3"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","margin-desktop":"3rem","space-xl":"2.5rem","space-md":"1rem","margin":"2rem","gutter-sm":"1rem","gutter-lg":"2rem","margin-mobile":"1rem","space-sm":"0.5rem","gutter":"1.5rem","space-xs":"0.25rem"},fontFamily:{"label-sm":["JetBrains Mono","monospace"],"display-md-mobile":["Space Grotesk","sans-serif"],"headline-md":["Space Grotesk","sans-serif"],"body-md":["Inter","sans-serif"],"display-lg":["Space Grotesk","sans-serif"],"display-md":["Space Grotesk","sans-serif"],"label-md":["JetBrains Mono","monospace"],"body-lg":["Inter","sans-serif"],"headline-lg":["Space Grotesk","sans-serif"],"index-marker":["JetBrains Mono","monospace"],"headline-sm":["Space Grotesk","sans-serif"],"display-lg-mobile":["Space Grotesk","sans-serif"],"body-sm":["Inter","sans-serif"]},fontSize:{"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"500"}],"display-md-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["68px",{"lineHeight":"72px","letterSpacing":"-0.04em","fontWeight":"700"}],"display-md":["48px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"body-lg":["17px",{"lineHeight":"27px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"index-marker":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["40px",{"lineHeight":"44px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}]}}}};</script><style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #fdf9f0;
+      }
+      ::selection {
+        background: #B83D27;
+        color: #ffffff;
+      }
+    }
+    .kinetic-title-word {
+      display: inline-block;
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), letter-spacing 0.38s ease;
+    }
+    .kinetic-title:hover .kinetic-title-word {
+      transform: translateY(-2px);
+    }
+    .grid-cross {
+      transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sample-pill-dragging {
+      opacity: 0.85;
+      cursor: grabbing !important;
+      transform: scale(1.04);
+      box-shadow: 0 16px 36px -8px rgba(184, 61, 39, 0.35);
+      z-index: 100;
+    }
+  </style><div class="fixed inset-0 pointer-events-none z-30 overflow-hidden"><div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden select-none z-10"><svg class="w-full h-full text-outline-variant/30" fill="none" preserveAspectRatio="none" stroke="currentColor" viewBox="0 0 1440 900"><!-- Subtle 4-point star accent (top left) --><path d="M180,120 Q180,140 160,140 Q180,140 180,160 Q180,140 200,140 Q180,140 180,120 Z" fill="rgba(184, 61, 39, 0.16)" stroke="none"></path><!-- Faint hairline triangle (upper mid) --><polygon fill="none" opacity="0.18" points="680,90 730,170 630,170" stroke="#1c1c16" stroke-dasharray="3 4" stroke-width="0.8"></polygon><!-- 4-point sparkle (mid right empty space) --><path d="M1320,240 Q1320,255 1305,255 Q1320,255 1320,270 Q1320,255 1335,255 Q1320,255 1320,240 Z" fill="#1c1c16" opacity="0.15"></path><!-- Faint small tilted triangle (bottom left) --><polygon fill="none" opacity="0.2" points="120,680 160,740 90,730" stroke="#1c1c16" stroke-dasharray="2 3" stroke-width="0.75"></polygon><!-- Delicate vermilion 4-point star (center bottom) --><path d="M590,750 Q590,762 578,762 Q590,762 590,774 Q590,762 602,762 Q590,762 590,750 Z" fill="rgba(184, 61, 39, 0.22)" stroke="none"></path><!-- Faint hairline triangle (bottom right) --><polygon fill="none" opacity="0.16" points="1260,620 1310,690 1220,700" stroke="#1c1c16" stroke-dasharray="3 3" stroke-width="0.8"></polygon><!-- Small sparkle accent (top right near prototype label) --><path d="M1100,105 Q1100,115 1090,115 Q1100,115 1100,125 Q1100,115 1110,115 Q1100,115 1100,105 Z" fill="#1c1c16" opacity="0.18"></path></svg></div><svg class="w-full h-full" id="trajectory-canvas"><path class="opacity-0 transition-opacity duration-200" fill="none" id="trajectory-path" stroke="#B83D27" stroke-dasharray="4 4" stroke-width="1.25"></path><circle class="opacity-0" fill="#B83D27" id="trajectory-tracker" r="3.5"></circle></svg><div class="absolute font-label-sm text-label-sm text-secondary bg-surface px-1.5 py-0.5 border border-secondary/30 pointer-events-none opacity-0 select-none transition-opacity duration-150 z-40 whitespace-nowrap" id="hud-readout"></div></div><header class="fixed top-0 left-0 w-full z-40 bg-surface/90 backdrop-blur-sm border-b border-outline-variant/60"><div class="h-16 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex items-center justify-between gap-4"><a aria-label="EquationFirst Home" class="group flex items-center gap-2.5 select-none transition-transform duration-150" href="#"><div class="w-9 h-9 rounded-xl bg-[#ffdad3] border-2 border-primary flex items-center justify-center transition-all duration-200 group-hover:-rotate-6 group-hover:scale-110 active:scale-95 flex-shrink-0 shadow-[2px_2px_0px_#19231f]"><svg class="w-5 h-5 text-primary stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6H7l6 6-6 6h11"></path><path d="M6 3v3"></path><path d="M6 18v3"></path></svg></div><div class="flex items-baseline tracking-tight font-headline-md leading-none"><span class="font-bold text-[20px] text-primary">Equation</span><span class="font-extrabold text-[20px] text-secondary ml-0.5">First</span></div></a><nav class="hidden md:flex items-center gap-6 text-[14px] font-semibold text-on-surface"></nav><div class="flex items-center gap-3"><button class="px-4 py-1.5 rounded-full border border-secondary text-secondary hover:bg-secondary/10 text-[13px] font-bold font-mono transition-all" type="button">Get started</button><button class="px-4 py-1.5 rounded-full border-2 border-primary bg-surface-container-lowest text-primary hover:bg-surface-container font-bold text-[13px] font-mono shadow-[3px_3px_0px_#19231f] flex items-center gap-1.5 transition-all" type="button"><span>Try Demo</span><span class="text-[11px]">▾</span></button></div></div></header><main class="w-full pt-14 bg-surface min-h-[calc(100vh-3.5rem)] flex flex-col justify-center"><div class="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-space-xl flex flex-col gap-12"><div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center relative" style="background-image: linear-gradient(to right, rgba(215, 208, 194, 0.35) 1px, transparent 1px), linear-gradient(rgba(215, 208, 194, 0.35) 1px, transparent 1px); background-size: 72px 72px; background-position: center top;"><section aria-labelledby="editorial-heading" class="lg:col-span-7 flex flex-col select-none pr-space-md relative z-10"><div class="inline-flex items-center self-start gap-1.5 px-3 py-1 bg-surface-container-low border border-primary/20 rounded-full shadow-[2px_2px_0px_#19231f] text-primary text-[12px] font-bold font-mono tracking-tight -rotate-1 hover:rotate-0 transition-transform mb-3"><span>Let's analyze it</span></div><h1 class="font-display-lg text-[44px] sm:text-[56px] lg:text-[68px] text-primary tracking-tight font-extrabold cursor-default mb-4" id="editorial-heading"><span class="block text-primary font-extrabold leading-none">Make every</span><span class="inline-flex items-center flex-wrap gap-x-3 gap-y-2 -mt-1 sm:-mt-2 leading-none"><span class="relative inline-block align-baseline"><span class="inline-block bg-[#ffdad3] text-primary px-3 sm:px-4 py-0 sm:py-0.5 leading-none border-2 border-primary rounded-sm shadow-[4px_4px_0px_#19231f]">equation</span></span><span>count.</span></span></h1><h2 class="font-headline-lg text-[22px] sm:text-[26px] lg:text-[30px] text-on-surface font-semibold tracking-tight mb-3">Find the equations to fix first.</h2><p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-6">With EquationFirst, professors, accessibility teams, and researchers can audit large and small PDF papers and spot inaccessible math notation instantly.</p><div class="flex items-center gap-6 mb-4"><div class="flex flex-wrap items-center gap-3"><button class="px-6 py-3 rounded-full bg-secondary text-white font-bold text-[15px] border-2 border-primary shadow-[4px_4px_0px_#19231f] hover:translate-y-[-2px] hover:shadow-[5px_5px_0px_#19231f] active:translate-y-[1px] active:shadow-[2px_2px_0px_#19231f] transition-all flex items-center gap-2 cursor-pointer" id="get-started-cta" type="button"><span>Get Started</span><span aria-hidden="true">→</span></button><button class="px-5 py-3 rounded-full bg-surface-container-lowest text-primary font-bold text-[14px] font-mono border-2 border-primary shadow-[3px_3px_0px_#19231f] hover:bg-surface-container flex items-center gap-2 transition-all cursor-pointer" id="load-sample-btn" type="button"><span>Sample Equation PDF</span><span class="text-xs">▾</span></button></div><div class="relative w-20 h-20 hidden sm:flex items-center justify-center flex-shrink-0 select-none group"><div class="absolute inset-0 animate-[spin_12s_linear_infinite]"><svg class="w-full h-full fill-current text-on-surface-variant/80 text-[8.5px] font-mono font-bold tracking-[0.22em] uppercase" viewBox="0 0 100 100"><defs><path d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" id="circlePath"></path></defs><text><textPath href="#circlePath">INSPECT • RECOGNIZE • FIX • MATH •</textPath></text></svg></div><div class="w-9 h-9 rounded-full bg-[#ffdad3] border border-primary flex items-center justify-center shadow-[1px_1px_0px_#19231f] text-secondary font-bold text-base">∑</div></div></div><div class="flex items-center gap-2 text-xs font-mono text-outline"></div></section><section aria-label="Document Upload Portal" class="lg:col-span-5 flex flex-col relative"><div aria-hidden="true" class="absolute -top-7 -left-7 w-16 h-16 pointer-events-none z-20 select-none"><svg class="w-full h-full" fill="none" stroke="#1c1c16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 60 60"><line x1="10" x2="2" y1="16" y2="10"></line><line x1="16" x2="13" y1="12" y2="2"></line><line x1="22" x2="24" y1="15" y2="3"></line></svg></div><div aria-hidden="true" class="absolute top-1/3 -left-6 w-10 h-24 pointer-events-none z-20 select-none"><svg class="w-full h-full" fill="none" stroke="#1c1c16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 40 90"><path d="M28,6 C16,14 6,24 16,33 C26,42 34,28 18,48 C6,64 12,78 28,84"></path></svg></div><div class="absolute -right-5 top-0 bottom-0 w-8 pointer-events-none z-20 hidden xl:flex items-center justify-center overflow-hidden"><div class="rotate-90 whitespace-nowrap text-[11px] font-mono tracking-widest text-outline/60 uppercase select-none">EquationFirst ~ Accessible Math ~ STEM Documents ~</div></div><div class="bg-surface-container-lowest border-2 border-primary rounded-2xl shadow-[6px_6px_0px_#19231f] relative flex flex-col p-6 z-10"><div aria-live="polite" class="relative border-2 border-dashed border-primary/30 hover:border-secondary bg-surface-container-low/60 hover:bg-surface-container/70 rounded-xl transition-all duration-200 cursor-pointer p-6 flex flex-col items-center justify-center text-center group" id="drop-zone" role="region"><input accept="application/pdf" class="sr-only" id="file-input" type="file"><div class="w-12 h-12 mb-3 rounded-xl bg-[#ffdad3] border-2 border-primary flex items-center justify-center text-primary group-hover:scale-105 transition-transform duration-150 shadow-[2px_2px_0px_#19231f]"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" x2="15" y1="13" y2="13"></line><line x1="9" x2="13" y1="17" y2="17"></line></svg></div><div class="font-headline-sm text-[17px] font-bold text-primary tracking-tight mb-1">Drop STEM PDF here or <span class="text-secondary underline underline-offset-2 hover:text-primary" id="choose-file-btn">browse</span></div><p class="font-label-sm text-[11px] font-mono text-on-surface-variant max-w-xs leading-normal uppercase tracking-wider mt-1">Accepts STEM PDFs, LaTeX preprints &amp; scans up to 64MB</p></div><div class="mt-4 flex flex-col gap-2"><div class="font-label-sm text-[10px] font-mono uppercase tracking-widest text-outline">Supported Ingestion Types</div><div class="flex flex-wrap gap-1.5"><span class="font-label-sm text-[11px] text-on-surface bg-surface-container-low border border-primary/20 px-2 py-0.5 rounded">Research Papers</span><span class="font-label-sm text-[11px] text-on-surface bg-surface-container-low border border-primary/20 px-2 py-0.5 rounded">Course Textbooks</span><span class="font-label-sm text-[11px] text-on-surface bg-surface-container-low border border-primary/20 px-2 py-0.5 rounded">LaTeX arXiv</span><span class="font-label-sm text-[11px] text-on-surface bg-surface-container-low border border-primary/20 px-2 py-0.5 rounded">Manuals</span></div></div><div class="pt-4"><button class="w-full py-3.5 px-space-lg font-mono text-sm uppercase tracking-wider font-extrabold transition-all duration-150 rounded-xl flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] bg-[#ffdad3] text-primary border-2 border-primary shadow-[4px_4px_0px_#19231f] hover:bg-[#ffb4a5]" id="analyze-action-btn" type="button"><span>Upload &amp; Inspect Equations</span><span aria-hidden="true">→</span></button></div></div></section></div><section class="pt-6 border-t-2 border-primary/10 flex flex-col gap-6" style="background-image: linear-gradient(to right, rgba(215, 208, 194, 0.3) 1px, transparent 1px); background-size: 100% 1px; background-position: 0px 0px;"><div class="text-center"><h3 class="font-headline-lg text-[32px] sm:text-[38px] font-bold text-primary tracking-tight">Kind of Ingestion</h3><p class="text-sm text-on-surface-variant mt-1">Automated extraction &amp; accessibility checking for all STEM formats</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full"><div class="bg-surface-container-lowest border-2 border-primary rounded-2xl p-5 shadow-[4px_4px_0px_#19231f] flex items-center gap-4 hover:-translate-y-1 transition-transform"><div class="w-14 h-14 rounded-2xl bg-[#ffdad3] border-2 border-primary flex items-center justify-center flex-shrink-0 shadow-[2px_2px_0px_#19231f]"><svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="flex flex-col"><div class="font-headline-sm text-[18px] font-bold text-primary">Research Papers &amp; Preprints</div><div class="text-[13px] text-on-surface-variant leading-snug mt-1">arXiv, IEEE, and Nature PDF preprints with complex multi-line derivations.</div></div></div><div class="bg-surface-container-lowest border-2 border-primary rounded-2xl p-5 shadow-[4px_4px_0px_#19231f] flex items-center gap-4 hover:-translate-y-1 transition-transform"><div class="w-14 h-14 rounded-2xl bg-[#bbcac0] border-2 border-primary flex items-center justify-center flex-shrink-0 shadow-[2px_2px_0px_#19231f]"><svg class="w-7 h-7 text-[#17241d]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="flex flex-col"><div class="font-headline-sm text-[18px] font-bold text-primary">STEM Course Textbooks</div><div class="text-[13px] text-on-surface-variant leading-snug mt-1">High-density mathematical chapters, matrices, calculus, and theorem proofs.</div></div></div></div></section></div></main><div class="fixed inset-0 pointer-events-none z-50" id="particle-emitter-zone"></div><script>
+  (function() {
+    const dropZone = document.getElementById('drop-zone');
+    const portalFrame = document.getElementById('portal-frame');
+    const fileInput = document.getElementById('file-input');
+    const chooseFileBtn = document.getElementById('choose-file-btn');
+    const dropZoneIdle = document.getElementById('drop-zone-idle');
+    const dropZoneSelected = document.getElementById('drop-zone-selected');
+    const stagedFileName = document.getElementById('staged-file-name');
+    const stagedFileSize = document.getElementById('staged-file-size');
+    const removeFileBtn = document.getElementById('remove-file-btn');
+    const loadSampleBtn = document.getElementById('load-sample-btn');
+    const draggableTile = document.getElementById('draggable-sample-tile');
+    const dropPromptText = document.getElementById('drop-prompt-text');
+    const analyzeBtn = document.getElementById('analyze-action-btn');
+    const fileStatusIndicator = document.getElementById('file-status-indicator');
+    
+    // Canvas & HUD elements
+    const trajectoryPath = document.getElementById('trajectory-path');
+    const trajectoryTracker = document.getElementById('trajectory-tracker');
+    const hudReadout = document.getElementById('hud-readout');
+    const gridCrosses = document.querySelectorAll('.grid-cross');
+
+    let isOverDropZone = false;
+    let isDraggingSample = false;
+
+    function formatBytes(bytes, decimals = 1) {
+      if (bytes === 0) return '0.0 MB';
+      const k = 1024;
+      const dm = decimals < 0 ? 0 : decimals;
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + ['Bytes', 'KB', 'MB', 'GB'][i];
+    }
+
+    function createIngestionParticles(x, y) {
+      const symbols = ['f(x)', '∫', '∑', 'dx', 'lim', '√x', '∂y', 'θ', 'π', '≈'];
+      const emitter = document.getElementById('particle-emitter-zone');
+      for (let i = 0; i < 12; i++) {
+        const span = document.createElement('span');
+        span.className = 'absolute font-mono font-bold pointer-events-none select-none text-vermilion';
+        span.style.fontSize = Math.floor(Math.random() * 6 + 11) + 'px';
+        span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        span.style.left = x + 'px';
+        span.style.top = y + 'px';
+        span.style.opacity = '1';
+        span.style.transform = 'translate(-50%, -50%) scale(1)';
+        span.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+        emitter.appendChild(span);
+
+        const angle = (Math.PI * 2 * i) / 12 + (Math.random() - 0.5) * 0.4;
+        const velocity = Math.random() * 75 + 40;
+        const tx = Math.cos(angle) * velocity;
+        const ty = Math.sin(angle) * velocity - 25;
+
+        requestAnimationFrame(() => {
+          span.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0.4)`;
+          span.style.opacity = '0';
+        });
+
+        setTimeout(() => span.remove(), 850);
+      }
+    }
+
+    function renderFileState(name, sizeFormatted, triggerEvent) {
+      stagedFileName.textContent = name;
+      stagedFileSize.textContent = sizeFormatted;
+      dropZoneIdle.classList.add('hidden');
+      dropZoneSelected.classList.remove('hidden');
+      dropZoneSelected.classList.add('flex');
+      dropZone.classList.add('border-primary', 'bg-surface-container-low');
+      dropZone.classList.remove('border-outline-variant', 'border-secondary');
+
+      hideTrajectory();
+
+      if (triggerEvent) {
+        const rect = dropZone.getBoundingClientRect();
+        createIngestionParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      }
+    }
+
+    function resetState() {
+      fileInput.value = '';
+      dropZoneSelected.classList.add('hidden');
+      dropZoneSelected.classList.remove('flex');
+      dropZoneIdle.classList.remove('hidden');
+      dropZone.classList.remove('border-primary', 'border-secondary', 'bg-surface-container', 'bg-surface-container-low');
+      dropZone.classList.add('border-outline-variant');
+      dropPromptText.textContent = '[ DRAG FILE OVER BOUNDS ]';
+      dropPromptText.classList.remove('text-secondary');
+      fileStatusIndicator.textContent = 'READY';
+      if (analyzeBtn) {
+        analyzeBtn.textContent = 'ANALYZE INACCESSIBLE FORMULAS →';
+        analyzeBtn.classList.remove('bg-primary');
+        analyzeBtn.classList.add('bg-secondary');
+      }
+    }
+
+    function updateTrajectory(startX, startY, targetX, targetY) {
+      const midX = (startX + targetX) / 2;
+      const controlY = Math.min(startX, targetY) - 55 - Math.abs(startX - targetX) * 0.15;
+      
+      const d = `M ${startX} ${startY} Q ${midX} ${controlY} ${targetX} ${targetY}`;
+      trajectoryPath.setAttribute('d', d);
+      trajectoryPath.classList.remove('opacity-0');
+      trajectoryPath.classList.add('opacity-90');
+
+      trajectoryTracker.setAttribute('cx', midX);
+      trajectoryTracker.setAttribute('cy', controlY + 25);
+      trajectoryTracker.classList.remove('opacity-0');
+
+      const dx = Math.round(targetX - startX);
+      const dy = Math.round(targetY - startY);
+      hudReadout.textContent = `Δx:${dx}px Δy:${dy}px [f(x)=a·x²+bx+c]`;
+      hudReadout.style.left = `${midX + 12}px`;
+      hudReadout.style.top = `${controlY + 20}px`;
+      hudReadout.classList.remove('opacity-0');
+    }
+
+    function hideTrajectory() {
+      trajectoryPath.classList.add('opacity-0');
+      trajectoryTracker.classList.add('opacity-0');
+      hudReadout.classList.add('opacity-0');
+    }
+
+    // Magnetic pull effect on Dropzone & corner crosses
+    window.addEventListener('mousemove', (e) => {
+      const rect = dropZone.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const dist = Math.hypot(e.clientX - centerX, e.clientY - centerY);
+
+      // Magnetic resistance threshold
+      if (dist < 420 && !dropZoneSelected.classList.contains('flex')) {
+        const pull = (1 - dist / 420) * 8;
+        const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+        const tx = Math.cos(angle) * pull;
+        const ty = Math.sin(angle) * pull;
+        portalFrame.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+
+        // Highlight crosses based on cursor proximity
+        gridCrosses.forEach(cross => {
+          cross.style.color = '#B83D27';
+          cross.style.transform = 'scale(1.25)';
+        });
+      } else {
+        portalFrame.style.transform = 'translate3d(0, 0, 0)';
+        gridCrosses.forEach(cross => {
+          cross.style.color = '';
+          cross.style.transform = '';
+        });
+      }
+
+      if (isDraggingSample) {
+        updateTrajectory(e.clientX, e.clientY, centerX, centerY);
+      }
+    });
+
+    // File input trigger
+    chooseFileBtn.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files.length > 0) {
+        const file = e.target.files[0];
+        if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
+          renderFileState(file.name, formatBytes(file.size), true);
+        } else {
+          alert('PDF files only.');
+          resetState();
+        }
+      }
+    });
+
+    // Drag-and-drop mechanics on dropzone
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        isOverDropZone = true;
+        dropZone.classList.add('border-secondary', 'bg-surface-container');
+        dropZone.classList.remove('border-outline-variant');
+        dropPromptText.textContent = '[ RELEASE TO INGEST ]';
+        dropPromptText.classList.add('text-secondary');
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        isOverDropZone = false;
+        dropZone.classList.remove('border-secondary', 'bg-surface-container');
+        dropPromptText.textContent = '[ DRAG FILE OVER BOUNDS ]';
+        dropPromptText.classList.remove('text-secondary');
+      }, false);
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files && files.length > 0) {
+        const file = files[0];
+        if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
+          renderFileState(file.name, formatBytes(file.size), true);
+        } else {
+          alert('PDF files only.');
+          resetState();
+        }
+      } else {
+        const textData = dt.getData('text/plain');
+        if (textData === 'SAMPLE_STEM_PAPER.pdf') {
+          renderFileState('SAMPLE_STEM_PAPER.pdf', '2.4 MB', true);
+        }
+      }
+      hideTrajectory();
+    });
+
+    // Draggable sample paper pill interactions
+    draggableTile.addEventListener('dragstart', (e) => {
+      isDraggingSample = true;
+      draggableTile.classList.add('sample-pill-dragging');
+      e.dataTransfer.setData('text/plain', 'SAMPLE_STEM_PAPER.pdf');
+      e.dataTransfer.effectAllowed = 'copyMove';
+    });
+
+    draggableTile.addEventListener('dragend', () => {
+      isDraggingSample = false;
+      draggableTile.classList.remove('sample-pill-dragging');
+      hideTrajectory();
+    });
+
+    // Elegant projectile glide animation for 'TRY THE SAMPLE PDF →'
+    loadSampleBtn.addEventListener('click', () => {
+      const tileRect = draggableTile.getBoundingClientRect();
+      const dropRect = dropZone.getBoundingClientRect();
+
+      const startX = tileRect.left + tileRect.width / 2;
+      const startY = tileRect.top + tileRect.height / 2;
+      const endX = dropRect.left + dropRect.width / 2;
+      const endY = dropRect.top + dropRect.height / 2;
+
+      // Create gliding proxy
+      const glider = document.createElement('div');
+      glider.className = 'fixed z-50 bg-secondary text-on-secondary font-label-sm text-label-sm px-3 py-1 font-mono pointer-events-none shadow-xl border border-white/20 select-none';
+      glider.textContent = 'SAMPLE_STEM_PAPER.pdf';
+      glider.style.left = `${startX}px`;
+      glider.style.top = `${startY}px`;
+      glider.style.transform = 'translate(-50%, -50%) scale(1)';
+      document.body.appendChild(glider);
+
+      let progress = 0;
+      const duration = 550;
+      const startTime = performance.now();
+
+      function stepGlide(timestamp) {
+        const elapsed = timestamp - startTime;
+        progress = Math.min(elapsed / duration, 1);
+        
+        // Easing curve (ease-in-out cubic)
+        const t = progress < 0.5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        const currentX = startX + (endX - startX) * t;
+        const arcPeak = -110 * Math.sin(Math.PI * t);
+        const currentY = startY + (endY - startY) * t + arcPeak;
+
+        glider.style.left = `${currentX}px`;
+        glider.style.top = `${currentY}px`;
+        glider.style.transform = `translate(-50%, -50%) rotate(${(t - 0.5) * 14}deg) scale(${1 - t * 0.15})`;
+
+        updateTrajectory(startX, startY, currentX, currentY);
+
+        if (progress < 1) {
+          requestAnimationFrame(stepGlide);
+        } else {
+          glider.remove();
+          hideTrajectory();
+          renderFileState('SAMPLE_STEM_PAPER.pdf', '2.4 MB', true);
+        }
+      }
+
+      requestAnimationFrame(stepGlide);
+    });
+
+    // Reset button
+    removeFileBtn.addEventListener('click', () => {
+      resetState();
+    });
+
+    // Analysis button feedback
+    analyzeBtn.addEventListener('click', () => {
+      analyzeBtn.textContent = 'IDENTIFYING HIGH-FRICTION EQUATIONS...';
+      analyzeBtn.classList.remove('bg-secondary');
+      analyzeBtn.classList.add('bg-primary');
+      setTimeout(() => {
+        analyzeBtn.textContent = 'COMPLETE: 14 SUSPECTED BARRIERS CATALOGED';
+      }, 1000);
+    });
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+</body></html>
